@@ -1,0 +1,89 @@
+Option Explicit
+
+Sub KenoProbabilities()
+
+Dim i, j, x, y, n, r, c, h As Integer
+Dim rStart As Integer
+Dim tot As Double
+Dim HL, numB, maxPB, totB, RTP
+Dim p As Single
+
+
+totB = 80
+numB = 20
+maxPB = 15
+
+'Adds Headers
+
+Cells(1, 1).Value = "'Total # of Balls"
+Cells(1, 3).Value = totB
+Cells(2, 1).Value = "'# of Balls Drawn"
+Cells(2, 3).Value = numB
+
+HL = 3
+Cells(HL, 1).Value = "'# Balls Played"
+Cells(HL, 2).Value = "'Catch"
+Cells(HL, 3).Value = "#Combination"
+Cells(HL, 4).Value = "'Probablity"
+Cells(HL, 5).Value = "'Payout"
+'Cells(HL, 6).Value = "'Return"
+Cells(HL, 7).Value = "'HF"
+Cells(HL, 8).Value = "'RTP"
+Cells(HL, 9).Value = "'House Edge"
+
+ActiveWindow.FreezePanes = False
+Range("B4").Select
+ActiveWindow.FreezePanes = True
+
+
+
+For i = 1 To HL
+    Rows(i).Font.Bold = True
+Next i
+
+Columns(1).Font.Bold = True
+
+For i = 6 To 10
+Columns(i).NumberFormat = "0.00%"
+Next i
+
+
+'Creates Probability Table
+r = HL + 1
+For n = 1 To maxPB
+    RTP = 0
+    Cells(r, 1).Value = n
+    tot = Application.Combin(totB, n)
+    
+    For i = n To 0 Step -1
+        
+        Cells(r, 2).Value = i
+        Cells(r, 3).Value = Application.Combin(numB, i) _
+        * Application.Combin(totB - numB, n - i)
+        Cells(r, 4).Value = Cells(r, 3) / tot
+        
+        p = Cells(r, 4) * Cells(r, 5)
+        'Cells(r, 6).Value = p
+        RTP = RTP + p
+        
+        r = r + 1
+
+    Next i
+    
+    Cells(r, 2).Value = "'Total"
+    Cells(r, 3).Value = Application.Combin(totB, n)
+    Cells(r, 4).Value = Application.Sum(Range(Cells(r - n - 1, 4), Cells(r - 1, 4)))
+    
+    'Calculates Game Stats
+    rStart = r - n - 1
+    Cells(rStart, 7).Value = _
+    Application.SumIf(Range(Cells(r - n - 1, 5), Cells(r - 1, 5)), "<>", Range(Cells(r - n - 1, 4), Cells(r - 1, 4)))
+    Cells(rStart, 8).Value = RTP
+    Cells(rStart, 9).Value = 1 - RTP
+    
+    r = r + 2
+        
+Next n
+
+
+End Sub
