@@ -2,6 +2,7 @@
 
 function playGame(){
     glassCanvas.style.zIndex = 10;
+    gctx.clearRect(xMargin,0,cWidth-2*xMargin,cHeight*0.9);//clears choosen numbers
     finctx.clearRect(xMargin,0,cWidth-2*xMargin,cHeight);
     drawBalls();
     markDrawnballs(winners,payout);
@@ -39,6 +40,7 @@ function payout(nCatch){
   }else{
     gctx.clearRect(xMargin,0,cWidth-2*xMargin,cHeight*0.9);//clears choosen numbers
     finctx.clearRect(xMargin,0,cWidth-2*xMargin,cHeight);
+    displayTotBet();
     glassCanvas.style.zIndex = -10;
     numGames=1;
   }
