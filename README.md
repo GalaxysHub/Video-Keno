@@ -27,6 +27,8 @@ Keno is similar to the lottery in that the player selects numbers and is paid fo
 
 Click a number to select it. Click a selected number to unselect it.
 Click the numbered buttons at the bottom to randomly select numbers
+Multiple games can be played by changing the number of games in the bottom right.
+
 
 ## Third Party Contributions
 
