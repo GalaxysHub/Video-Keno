@@ -1,0 +1,22 @@
+{
+  "name": "video-keno",
+  "version": "1.0.0",
+  "description": "HTML5 Video Keno",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GalaxysHub/Video-Keno.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GalaxysHub/Video-Keno/issues"
+  },
+  "homepage": "https://github.com/GalaxysHub/Video-Keno#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

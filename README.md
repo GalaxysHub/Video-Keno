@@ -1,23 +1,16 @@
 # Video Keno
 
+See deployed app here: https://videokeno.herokuapp.com/index.html
 
 ## Description
 HTML5 Video Keno
 
 Written in pure Vanilla Javascript with no third-party libraries.  
 
+
 Minimum working version. For personal use only.
 
 <img width="1020" alt="videokeno" src="https://user-images.githubusercontent.com/39435918/53035789-dbfcbf80-343b-11e9-9e57-f423aadbf744.PNG">
-
-
-## Download Instructions
-
-Download and unzip the repo. 
-
-Open the file named index.html. 
-
-If images/fonts are missing, Refresh the page.
 
 ## Game Rules
 
