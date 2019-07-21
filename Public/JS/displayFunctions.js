@@ -34,7 +34,7 @@ const btnPicsLoc = "./Pictures/";
 const BtnIMGsPromArr = returnPromiseImgArr(btnPics,btnImages,btnPicsLoc);
 Promise.all(BtnIMGsPromArr)
 .then(document.fonts.load('12px Chela'))
-.then(document.fonts.load('12px TheBlacklist'))
+// .then(document.fonts.load('12px TheBlacklist'))
 .then(()=>{
   BGBTNctx.drawImage(btnImages['background2'],0,0,cWidth,btncHeight);
   setQuickPickNums();
@@ -58,9 +58,9 @@ const numSize = Math.floor((cWidth-2*xMargin-(numPicks-1)*numXSpace)/numPicks);
 
 function setQuickPickNums(){
   for(let i = 0; i<numPicks; i++){
-    var xPos = pickNumXStart+(numSize+numXSpace)*i;
-    var yPos = pickNumYStart;
-    var num = i+minPick;
+    let xPos = pickNumXStart+(numSize+numXSpace)*i;
+    let yPos = pickNumYStart;
+    let num = i+minPick;
     buttonsMap.set(num,{img:'WhiteSquare',x:xPos, y:yPos, w:numSize, h:numSize});
   }
 }
@@ -76,9 +76,9 @@ function displayQuickPickNums(){
   }
 
   for(let i = 0; i<numPicks; i++){
-    var xPos = pickNumXStart+(numSize+numXSpace)*i;
-    var yPos = pickNumYStart;
-    var num = i+minPick;
+    let xPos = pickNumXStart+(numSize+numXSpace)*i;
+    let yPos = pickNumYStart;
+    let num = i+minPick;
     if(num==nPicked){BTNctx.fillStyle = 'red';
     }else{BTNctx.fillStyle = "black";}
     BTNctx.fillText(num,xPos+numSize/2,yPos+(numSize-numSize/2),numSize);
