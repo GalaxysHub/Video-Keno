@@ -1,6 +1,6 @@
 # Video Keno
 
-See deployed app here: https://videokeno.herokuapp.com
+See deployed app here: https://videokeno.netlify.app/
 
 ## Description
 HTML5 Video Keno
